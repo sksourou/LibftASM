@@ -15,7 +15,7 @@ _loop_rdi:
 _loop_cpy:
         cmp byte [rsi], 0
         je  end
-        movsb ;cca veut dire quoi ca samr
+        movsb               ;increm after operation
         jmp _loop_cpy
 
 end:
