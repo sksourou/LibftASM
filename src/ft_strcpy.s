@@ -1,6 +1,5 @@
 global  _ft_strcpy
 extern  _ft_strlen
-extern	_ft_memcpy
 
 section .text
 
@@ -12,5 +11,11 @@ _ft_strcpy:
 	mov rbx, rax
 	pop rsi
 	pop rdi
-	call _ft_memcpy
+	call cpy
 	ret
+
+cpy:
+   mov rax, rdi
+   mov rcx, rbx
+   repnz movsb
+   ret

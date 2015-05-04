@@ -1,9 +1,12 @@
-global  _ft_memcpy
+global _ft_memcpy
 
-section .text
+	section .text
 
 _ft_memcpy:
-   mov rax, rdi
-   mov rcx, rbx
-   repnz movsb  ;incr
-   ret
+	push	rdi
+	mov		rax, rdi
+	mov		rcx, rdx
+	cld
+	rep		movsb
+	pop 	rax
+	ret

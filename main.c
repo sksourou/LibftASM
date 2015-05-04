@@ -14,29 +14,31 @@
 #include <string.h>
 #include <fcntl.h>
 
-void  ft_bzero(void *s, size_t n);
-char  *ft_strcat(char *s1, char *s2);
-int    ft_isascii(int c);
-int    ft_isdigit(int c);
-int    ft_isprint(int c);
-int    ft_isalpha(int c);
-int    ft_isalnum(int c);
-int    ft_toupper(int c);
-int    ft_tolower(int c);
-int    ft_strlen(char *s);
-int    ft_puts(char *s);
-void   *ft_memset(void *b, int c, size_t len);
-void   *ft_memcpy(void *dest, void *src, size_t n);
-char    *ft_strcpy(char *s1, char *s2);
+void    ft_bzero(void *s, size_t n);
+char    *ft_strcat(char *s1, char *s2);
+int     ft_isascii(int c);
+int     ft_isdigit(int c);
+int     ft_isprint(int c);
+int     ft_isalpha(int c);
+int     ft_isalnum(int c);
+int     ft_toupper(int c);
+int     ft_tolower(int c);
+int     ft_strlen(char *s);
+int     ft_puts(char *s);
+void    *ft_memset(void *b, int c, size_t len);
+void    *ft_memcpy(void *dest, void *src, size_t n);
 char    *ft_strdup(char *s);
 void    ft_cat(int fd);
-//      BONUS
-int    ft_islower(int c);
-int    ft_isupper(int c);
-//char    *ft_strchr(char *s, int c);
-//char    *ft_strrchr(char *s, int c);
+/*
+**     BONUS
+*/
+char    *ft_strcpy(char *s1, char *s2);
+int     ft_islower(int c);
+int     ft_isupper(int c);
+char    *ft_strchr(char *s, int c);
+char    *ft_strrchr(char *s, int c);
 
-/*void    test_strrchr(void)
+void    test_strrchr(void)
 {
     char    s[42]= "baba au whum";
     printf("~~~~ ##### TEST [STRRCHR] ##### ~~~~\n");
@@ -56,15 +58,13 @@ void    test_strchr(void)
     printf("~>[_ft_strchr]: |%s|\n", ft_strchr("asm 64 bits", 'w'));
 }
 
-*/
-
 void    test_cat(void)
 {
     int fd;
     fd = open("test.txt", O_RDONLY);
     printf("~~~~ ##### TEST [CAT] ##### ~~~~\n");
     ft_cat(fd);
-    // ft_cat(42);
+    printf("\n");
 }
 
 void    test_strdup(void)
@@ -242,22 +242,22 @@ void    test_toUPLOWer(void)
 
 int     main(void)
 {
-    //test_strrchr();
-    //test_strchr();
+    test_strrchr();
+    test_strchr();
     test_cat();
-     test_strdup();
-     test_strcpy();
-     test_memset();
-     test_memcpy();
-     test_puts();
-     test_strcat();
-     test_bzero();
-     test_isascii();
-     test_isdigit();
-     test_isprint();
-     test_isUPLOWer();
-     test_isalpha();
-     test_isalnum();
-     test_toUPLOWer();
+    test_strdup();
+    test_strcpy();
+    test_memset();
+    test_memcpy();
+    test_puts();
+    test_strcat();
+    test_bzero();
+    test_isascii();
+    test_isdigit();
+    test_isprint();
+    test_isUPLOWer();
+    test_isalpha();
+    test_isalnum();
+    test_toUPLOWer();
     return (0);
 }

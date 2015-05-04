@@ -3,17 +3,9 @@ global  _ft_isprint
 section .text
 
 _ft_isprint:
-    cmp rdi, 40
+    cmp rdi, 32
     jl  end
-    cmp rdi, 127
-    jg  _test
-    mov rax, 1
-    ret
-
-_test:
-    cmp rdi, 130
-    jl  end
-    cmp rdi, 176
+    cmp rdi, 126
     jg  end
     mov rax, 1
     ret
